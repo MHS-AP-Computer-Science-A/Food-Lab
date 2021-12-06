@@ -1,11 +1,9 @@
 import java.io.File;
-import java.util.Scanner;
-import java.net.*;
-import java.io.*;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FoodLab{
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		// Create an array for 8790 foods
 		FoodItem[] foodList = new FoodItem[8790];
@@ -15,8 +13,7 @@ public class FoodLab{
 			int index = 0;
 
 			// Open the file with a Scanner
-			URL url = new URL("https://codehs.com/uploads/20316c74a18a845a4995c0604c18b20a");
-			Scanner file = new Scanner(url.openStream());
+			Scanner file = new Scanner(new File("food_data_final.txt"));
 			// Loop while there are lines left in the file
 			while (file.hasNextLine()) {
 				// Input entire line containing data for one food
